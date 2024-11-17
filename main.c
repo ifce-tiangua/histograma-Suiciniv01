@@ -19,16 +19,22 @@ int main() {
 
     scanf("%d", &num_categorias);
 
+    if (num_categorias == 0){
+        
+        printf("vazio");
+
+    }  
+
     int* vendas = (int*)malloc(num_categorias * sizeof(int));
 
     for (int i = 0; i < num_categorias; i++) {
-        scanf("%d", &vendas[i]); 
+        scanf("%d", &vendas[i]);
     }
 
     imprime_histograma(vendas, num_categorias);
 
     free(vendas);
-
+    
 
     return 0;
 }
