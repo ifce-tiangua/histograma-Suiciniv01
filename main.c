@@ -29,5 +29,6 @@ int main() {
 
     free(vendas);
 
+
     return 0;
 }
