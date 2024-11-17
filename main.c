@@ -5,7 +5,7 @@ void imprime_histograma(int *vendas, int num_categorias) {
     int i, j;
 
     for (i = 0; i < num_categorias; i++) {
-        printf("%i ", vendas[i]); 
+        printf("%d ", vendas[i]); 
 
         for (j = 0; j < vendas[i]; j++) {
             printf("*");
@@ -19,12 +19,17 @@ void imprime_histograma(int *vendas, int num_categorias) {
 int main() {
     int num_categorias, i, *vendas;
 
-    scanf(" %i", &num_categorias);
+    scanf("%d", &num_categorias);
+
+    if (num_categorias == 0){
+        printf("vazio\n");
+    }
+    
 
     vendas = (int*) malloc(num_categorias * sizeof(int));
 
     for (i = 0; i < num_categorias; i++) {
-        scanf(" %i", &vendas[i]);
+        scanf("%d", &vendas[i]);
     }
 
     imprime_histograma(vendas, num_categorias);
