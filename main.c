@@ -30,7 +30,6 @@ int main() {
     }
 
     for (int i = 0; i < num_categorias; i++) {
-
         *(vendas + i) = (int*)malloc(sizeof(int));
         if (*(vendas + i) == NULL) {
             return 1;
