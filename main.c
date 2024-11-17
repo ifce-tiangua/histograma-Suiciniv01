@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprime_histograma(int* vendas, int num_categorias) {
+void imprime_histograma(int* vendas[], int num_categorias) {
     for (int i = 0; i < num_categorias; i++) {
         printf("%d ", vendas[i]); 
 
@@ -19,14 +19,7 @@ int main() {
 
     scanf("%d", &num_categorias);
 
-    if (num_categorias <= 0) {
-        return 1;
-    }
-
     int* vendas = (int*)malloc(num_categorias * sizeof(int));
-    if (vendas == NULL) {
-        return 1;
-    }
 
     for (int i = 0; i < num_categorias; i++) {
         scanf("%d", &vendas[i]); 
