@@ -1,33 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void imprime_histograma(int* vendas[], int num_categorias) {
-    for (int i = 0; i < num_categorias; i++) {
+void imprime_histograma(int *vendas, int num_categorias) {
+    int i, j;
+
+    for (i = 0; i < num_categorias; i++) {
         printf("%d ", vendas[i]); 
 
-        if (vendas[i] > 0) { 
-            for (int j = 0; j < vendas[i]; j++) {
-                printf("*");
-            }
+        for (j = 0; j < vendas[i]; j++) {
+            printf("*");
         }
+        
         printf("\n");
+
     }
 }
 
 int main() {
-    int num_categorias;
+    int num_categorias, i;
 
     scanf("%d", &num_categorias);
 
-    if (num_categorias == 0){
-        
-        printf("vazio");
+    int *vendas = (int*) malloc(num_categorias * sizeof(int));
 
-    }  
-
-    int* vendas = (int*)malloc(num_categorias * sizeof(int));
-
-    for (int i = 0; i < num_categorias; i++) {
+    for (i = 0; i < num_categorias; i++) {
         scanf("%d", &vendas[i]);
     }
 
@@ -35,6 +31,5 @@ int main() {
 
     free(vendas);
     
-
     return 0;
 }
