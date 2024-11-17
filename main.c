@@ -17,11 +17,11 @@ void imprime_histograma(int *vendas, int num_categorias) {
 }
 
 int main() {
-    int num_categorias, i;
+    int num_categorias, i, *vendas;
 
     scanf("%d", &num_categorias);
 
-    int *vendas = (int*) malloc(num_categorias * sizeof(int));
+    vendas = (int*) malloc(num_categorias * sizeof(int));
 
     for (i = 0; i < num_categorias; i++) {
         scanf("%d", &vendas[i]);
